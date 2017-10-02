@@ -1,0 +1,51 @@
+<div class="jumbotron">
+	<div style="margin-left:45px;">
+	<h1>Nuestros Empleadores</h1>
+	<p> Podrás ver una lista sencilla con nuestros empleadores, ademas
+		podrás crear, modificar o eliminar. Verás lo rápido que puedo procesar la información!.</p>
+	</div>
+</div>
+
+<div ng-controller="empleadoresController">
+
+	<div class="container">
+
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-1">
+
+				<table class="table table-striped">
+					<th> LISTADO</th>
+					<tr class="info">
+						<td>EMPLEADOR</td>
+						<td>AÑO DE INGRESO</td>
+						<td>TRABAJADOR</td>
+					</tr>
+					<tr ng-repeat="empleador in empleadores" ng-click="selectEmpleador(empleador)">
+						<td>{{ empleador.empleador }}</td>
+						<td>{{ empleador.fingreso }}</td>
+						<td>{{ empleador.trabajador }}</td>
+					</tr>
+				</table>
+			<hr>
+			<center><h5>Nº de Registros: <span class="label label-success">{{ empleadores.length }}</span></h5></center>
+			</div>
+			<div class="col-sm-4 col-sm-offset-1 text-center">
+				<h4>Puedes probarme aquí </h4>
+				<form name="myForm">
+					<div class="form-group">
+						<input type="text" class="form-control input-lg text-center" placeholder="Empleador" ng-model="newEmpleador.empleador" required>
+						<br>
+						<input type="text" class="form-control input-lg text-center" placeholder="Año de Ingreso" ng-model="newEmpleador.fingreso" required>
+						<br>
+						<input type="text" class="form-control input-lg text-center" placeholder="Nombre Trabajador" ng-model="newEmpleador.trabajador" required>
+					</div>
+
+					<!-- Acciones que podemos realizar en el formulario -->
+					<button type="submit" class="btn btn-success btn-lg" ng-click="registrarEmpleador()" ng-disabled="myForm.$invalid || selected">Registrar</button>
+					<button type="submit" class="btn btn-warning btn-lg" ng-click="modificarEmpleador(newEmpleador)" ng-disabled="!newEmpleador.empleador || !newEmpleador.fingreso || !newEmpleador.trabajador || !selected">Modificar</button>
+					<button type="submit" class="btn btn-danger btn-lg" ng-click="borrarEmpleador(newEmpleador)" ng-disabled="!newEmpleador.empleador || !newEmpleador.fingreso || !newEmpleador.trabajador || !selected">Borrar</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html ng-app="miApp">
+
+<head>
+  <!-- Bootstrap-->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+
+  <!-- Angular -->
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+  <script src="script.js"></script>
+	<!--script src="empleadores.js"></script-->
+</head>
+
+<!-- define el main controller -->
+<body ng-controller="mainController">
+
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">Bienvenid@!</a>
+      </div>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+				<li><a href="#empleadores"><i class="fa fa-user"></i> Nuestros Empleadores</a></li>
+        <li><a href="#nosotros"><i class="fa fa-book"></i> Nosotros</a></li>
+        <li><a href="#contactanos"><i class="fa fa-comment"></i> Contactanos</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div id="main">
+		<!-- aca injectamos nuestro contenido -->
+    <div ng-view></div>
+
+  </div>
+
+  <footer class="text-center" style="background-color:#eee;padding:15px; margin-top:50px; ">
+    <p>Visita Nuestro Emprendimiento <a href="http://www.chatxbot.com/" target="_blank">ChatXBot</a></p>
+		<p>Además IptvLatino, canales streaming para todos <a href="http://www.facebook.com/miiptvlatino" target="_blank">Mi IPTV Latino</a></p>
+
+  </footer>
+
+</body>
+
+</html>
